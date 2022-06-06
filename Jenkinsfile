@@ -38,7 +38,7 @@ pipeline {
         stage('Build') {
            steps {
               container('openshift-client') {
-              sh "git clone https://gitlab.com/atwatanmalikm/simple-webapp.git"
+              sh "git clone https://github.com/atwatanmalikm/simple-webapp.git"
               sh "sed -i \"s|webapp:|webapp:${version}|g\" simple-webapp/manifest/buildconfig.yaml"
               sh "sed -i \"s|webapp:|webapp:${version}|g\" simple-webapp/manifest/app.yaml"
               sh "cat simple-webapp/manifest/buildconfig.yaml simple-webapp/manifest/app.yaml"
